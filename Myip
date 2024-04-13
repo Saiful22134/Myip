@@ -40,6 +40,6 @@ def get_ip_address():
 if __name__ == "__main__":
     my_ip = get_ip_address()
     if my_ip:
-        print("Your real IP address is:", my_ip)
+        print("Your IP address is:", my_ip)
     else:
         print("Unable to determine your IP address.")
