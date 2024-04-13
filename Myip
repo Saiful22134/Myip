@@ -1,0 +1,45 @@
+def login():
+    # Hardcoded username and password for demonstration purposes
+    username = "SAIFUL"
+    password = "FIRE"
+
+    # Ask for username and password
+    input_username = input("Enter your username: ")
+    input_password = input("Enter your password: ")
+
+    # Check if username and password are correct
+    if input_username == username and input_password == password:
+        print("Login successful!")
+        # Add code here for what you want to do after successful login
+    else:
+        print("Incorrect username or password. Please try again.")
+        login()
+
+if __name__ == "__main__":
+    print("Welcome to the login page!")
+    login()
+
+import socket
+
+def get_ip_address():
+    # Create a socket object
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        # Connect to a remote server
+        s.connect(("8.8.8.8", 80))
+        # Get the socket's own address
+        ip_address = s.getsockname()[0]
+    except Exception as e:
+        print("Error:", e)
+        ip_address = None
+    finally:
+        # Close the socket
+        s.close()
+    return ip_address
+
+if __name__ == "__main__":
+    my_ip = get_ip_address()
+    if my_ip:
+        print("Your real IP address is:", my_ip)
+    else:
+        print("Unable to determine your IP address.")
